@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const Display = ({children}) => {
-    return <div>{children}</div>
+const Display = ({ firstOperand, secondOperand, operator, total }) => {
+  return <div>{ total ? total : <>{firstOperand}{operator}{secondOperand}</>}</div>
 }
+
+export default Display;

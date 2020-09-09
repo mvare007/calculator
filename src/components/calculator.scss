@@ -1,34 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+body {
+  background: #92989B;
+}
+
 .calculator {
-  width: 40vw;
-  background-color: red;
-  margin: 12rem auto;
+  font-family: 'Black Ops One', cursive;
+  width: 350px;
+  height: 500px;
+  background-color: #394F66;
+  margin: 10rem auto;
+  border-top: 45px solid #394F66;
+  border-radius: 5px 5px 30px 30px;
+
+  .button {
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+    font-size: 20px;
+    text-shadow: #000 0px 0px 10px;
+    cursor: pointer;
+    height: 55px;
+    width: 75px;
+    background: #96A0A0;
+    color: #ffff;
+    border: 3px solid #6f7070;
+    margin: 3px;
+    transition: all 0.3s ease;
+    &:hover {
+      border-color: #fff;
+    }
+    &:active {
+      opacity: 0.4;
+    }
+  }
+
+  .keypad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem 14px;
+  }
+
+  .numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .operators {
+    display: grid;
+    grid-template-columns: 1fr;
+    .button {
+      background: #575256;
+      font-size: 26px;
+    }
+  }
+
+  .display {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 20px;
+    font-size: 38px;
+    height: 120px;
+    background-color: #A6A87F;
+    word-break: break-word;
+    border-radius: 4px;
+    border: 4px solid black;
+    overflow-y: scroll;
+  }
 }
 
-.button {
-  padding: 18px;
-  font-size: 20px;
-  cursor: pointer;
+.display::-webkit-scrollbar {
+  width: 10px;
 }
 
-.keypad {
-  text-align: center;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.display::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.numbers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.display::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
-.operators {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.display {
-  font-size: 50px;
-  text-align: center;
-  padding: 60px;
+.red {
+  background: #A96D7F !important;
 }

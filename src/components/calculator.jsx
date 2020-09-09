@@ -9,16 +9,28 @@ const Calculator = () => {
   const [ operands, setOperands ] = useState([]);
   const [ total, setTotal ] = useState(null);
 
+  const getPreviousTotal = () => {
+    if (total !== null) setOperands(total.toString().split());
+    setTotal(null);
+  }
+
   const selectOperand = (e) => {
+    getPreviousTotal();
     const buttonText = e.target.innerHTML;
-    operands.length === 0 ? setOperands([buttonText]) : setOperands(operands => [...operands, buttonText]);
+    operands.length === 0 && !total ? setOperands([buttonText]) : setOperands(operands => [...operands, buttonText]);
   }
 
   const calculate = () => {
-    setTotal(math.evaluate(operands.join("")));
+    try {
+      setTotal(math.evaluate(operands.join("")));
+    }
+    catch (err) {
+      setTotal("Syntax Error")
+    }
   }
 
   const clear = () => {
+    getPreviousTotal();
     setOperands(operands.filter((e) => e !== operands[operands.length - 1]));
   }
 

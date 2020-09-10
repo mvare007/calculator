@@ -8,7 +8,7 @@ const Display = ({ operands, total }) => {
     screen.current.scrollTop = screen.current.scrollHeight;
   });
 
-  return <div className="display" ref={screen}>{ total ? <>{operands} <br/> = {total}</> : operands }</div>
+  return <div className="display" ref={screen}>{ total ? <>{operands} = {total}</> : operands }</div>
 }
 
 export default Display;

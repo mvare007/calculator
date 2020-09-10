@@ -9,7 +9,7 @@ const Keypad = ({ clear, allClear, selectOperand, getResult }) => {
       <div className="numbers">
         <Button className="button red" onClick={allClear}  text="C" />
         <Button className="button red" onClick={clear}     text="CE" />
-        <Button className="button" onClick={() => setShift(!shift)} text="⇧" />
+        <Button className={shift ? "button" : "button pressed"} onClick={() => setShift(!shift)} text="⇧" />
         <Button className="button" onClick={selectOperand} text="7" />
         <Button className="button" onClick={selectOperand} text="8" />
         <Button className="button" onClick={selectOperand} text="9" />
